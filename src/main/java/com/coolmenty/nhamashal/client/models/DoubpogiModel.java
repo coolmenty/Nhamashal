@@ -1,4 +1,4 @@
-package com.coolmenty.nhamashal.client.models;// Made with Blockbench 4.6.0
+package com.coolmenty.nhamashal.client.models;// Made with Blockbench 4.6.1
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
@@ -28,25 +28,25 @@ public class DoubpogiModel extends EntityModel<Doubpogi> {
 	}
 
 	public static LayerDefinition createBodyLayer() {
-		var mesh = new MeshDefinition();
-		PartDefinition parts = mesh.getRoot();
+		MeshDefinition meshdefinition = new MeshDefinition();
+		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition CenterPiece = parts.addOrReplaceChild("CenterPiece", CubeListBuilder.create().texOffs(10, 12).addBox(2.0F, -5.0F, -2.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+		PartDefinition CenterPiece = partdefinition.addOrReplaceChild("CenterPiece", CubeListBuilder.create().texOffs(10, 12).addBox(2.0F, -5.0F, -2.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
 		.texOffs(4, 8).addBox(2.0F, -5.0F, 1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
 		PartDefinition Torso_r1 = CenterPiece.addOrReplaceChild("Torso_r1", CubeListBuilder.create().texOffs(0, 0).addBox(-5.0F, -5.0F, -2.0F, 8.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, -0.2182F));
 
-		PartDefinition RightLeg = parts.addOrReplaceChild("RightLeg", CubeListBuilder.create().texOffs(0, 11).addBox(0.0F, -3.0F, -4.0F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
+		PartDefinition RightLeg = partdefinition.addOrReplaceChild("RightLeg", CubeListBuilder.create().texOffs(0, 11).addBox(0.0F, -3.0F, -4.0F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
 		.texOffs(6, 11).addBox(0.0F, -2.0F, -6.0F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
 		PartDefinition RightFrontLegMiddle_r1 = RightLeg.addOrReplaceChild("RightFrontLegMiddle_r1", CubeListBuilder.create().texOffs(0, 8).addBox(0.0F, -3.0F, -2.0F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, -3.0F, 0.3491F, 0.0F, 0.0F));
 
-		PartDefinition LeftLeg = parts.addOrReplaceChild("LeftLeg", CubeListBuilder.create().texOffs(6, 8).addBox(0.0F, -3.0F, 2.0F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
+		PartDefinition LeftLeg = partdefinition.addOrReplaceChild("LeftLeg", CubeListBuilder.create().texOffs(6, 8).addBox(0.0F, -3.0F, 2.0F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
 		.texOffs(0, 0).addBox(0.0F, -2.0F, 5.0F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
 		PartDefinition LeftFrontLegMiddle_r1 = LeftLeg.addOrReplaceChild("LeftFrontLegMiddle_r1", CubeListBuilder.create().texOffs(10, 9).addBox(0.0F, -3.0F, 0.0F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 3.0F, -0.3491F, 0.0F, 0.0F));
 
-		return LayerDefinition.create(mesh, 32, 32);
+		return LayerDefinition.create(meshdefinition, 32, 32);
 	}
 
 	@Override
