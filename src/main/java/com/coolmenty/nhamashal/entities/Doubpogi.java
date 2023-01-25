@@ -19,8 +19,8 @@ import java.util.EnumSet;
 
 
 public class Doubpogi extends PathfinderMob {
-    @Nullable
-    protected RandomStrollGoal randomStrollGoal;
+
+
     public Doubpogi(EntityType<? extends PathfinderMob> type, Level level) {
         super(type, level);
     }
@@ -31,12 +31,7 @@ public class Doubpogi extends PathfinderMob {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(1, this.randomStrollGoal);
-        this.randomStrollGoal = new RandomStrollGoal(this, 1.0D, 80);
-        this.randomStrollGoal.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
-        MoveTowardsRestrictionGoal movetowardsrestrictiongoal = new MoveTowardsRestrictionGoal(this, 1.0D);
-        movetowardsrestrictiongoal.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
-
+        this.goalSelector.addGoal(1, new RandomStrollGoal(this, 1.0D));
     }
     public static AttributeSupplier.Builder getExampleAttributes() {
         return Mob.createMobAttributes().add(Attributes.MOVEMENT_SPEED, (double)0.3F).add(Attributes.MAX_HEALTH, 8.0D).add(Attributes.ATTACK_DAMAGE, 2.0D).add(ForgeMod.SWIM_SPEED.get(), 0.9f);
