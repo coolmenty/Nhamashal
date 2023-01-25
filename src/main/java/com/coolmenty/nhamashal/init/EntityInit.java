@@ -12,5 +12,5 @@ public class EntityInit {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, NhamashalMain.MODID);
 
     public static final RegistryObject<EntityType<Doubpogi>> DOUBPOGI = ENTITIES.register("doubpogi",
-            () -> EntityType.Builder.of(Doubpogi::new, MobCategory.CREATURE).build(NhamashalMain.MODID + ":doubpogi"));
+            () -> EntityType.Builder.of(Doubpogi::new, MobCategory.CREATURE).sized(1.0f, 1.0f).build(NhamashalMain.MODID + ":doubpogi"));
 }
